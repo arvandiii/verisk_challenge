@@ -53,6 +53,8 @@ def main():
             if not (Decimal('0.0') <= number <= Decimal('1_000_000_000.0')):
                 sys.exit(f"Error: Input {line} must be between 0.0 and 1,000,000,000.0 inclusive.")
             numbers.append(number)
+            if len(numbers) > 100:
+                sys.exit(f"Error: Input count must not exceed 100 numbers.")
         except InvalidOperation:
             sys.exit(f"Error: Input {line} must be a valid decimal number.")
 
